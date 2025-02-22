@@ -1,0 +1,234 @@
+/* ========================
+   Global Variables 
+======================== */
+:root {
+  --primary-blue: #007bff;
+  --sky-blue: #e3f2fd;
+  --light-blue: #b3e0ff;
+  --dark-blue: #0056b3;
+}
+
+/* ========================
+   Base Styles 
+======================== */
+body {
+  background-color: var(--sky-blue);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ========================
+   Typography 
+======================== */
+h1,
+h2 {
+  color: var(--dark-blue);
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 10px;
+}
+
+/* ========================
+   Layout & Containers 
+======================== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: white;
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* ========================
+   Form Elements 
+======================== */
+.form-group {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin: 15px 0;
+  padding: 15px;
+}
+
+input[type="text"],
+select,
+textarea {
+  border: 1px solid var(--light-blue);
+  border-radius: 4px;
+  padding: 8px;
+  transition: border-color 0.3s;
+  margin-top: 3px;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* ========================
+   Buttons & Actions 
+======================== */
+button {
+  background-color: var(--primary-blue);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--dark-blue);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* ========================
+   Custom Components 
+======================== */
+/* Count Selectors */
+.count-selectors {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.count-selectors div {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.count-selectors label {
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+/* Driver/Vehicle Sections */
+.driver-section,
+.vehicle-section {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 15px;
+}
+
+/* Coverage Options */
+.coverage-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.coverage-options label {
+  display: flex;
+  align-items: center;
+  background-color: #f1f8ff;
+  border-radius: 4px;
+  padding: 8px;
+  transition: background-color 0.2s;
+}
+
+.coverage-options label:hover {
+  background-color: #d1e7ff;
+}
+
+.coverage-options input {
+  width: 50px;
+}
+
+.coverage-amount select {
+  width: 60px;
+  margin-left: 5px;
+}
+
+/* Lapse Records */
+.lapse-record {
+  background-color: #e9ecef;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.lapse-record input[type="text"] {
+  margin: 0 5px;
+  padding: 4px;
+  width: 120px;
+}
+
+/* Checkbox Grid */
+.checkbox-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========================
+   Generated Note Area 
+======================== */
+#final-note {
+  background-color: #fff;
+  border: 2px solid var(--primary-blue);
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  height: 400px;
+  line-height: 1.5;
+  margin-top: 20px;
+  padding: 15px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#final-note:focus {
+  border-color: var(--dark-blue);
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.25);
+}
+
+/* ========================
+   Utility Classes 
+======================== */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+  .checkbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .count-selectors {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .coverage-options {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2px;
+    font-size: 80%;
+  }
+
+  #final-note {
+    width: 90%;
+  }
+}

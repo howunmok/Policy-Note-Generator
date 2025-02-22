@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automobile Note Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Automobile Note Generator</h1>
+      <form id="note-form">
+        <!-- General Information Section -->
+        <section id="general-info">
+          <h2>1. General Information</h2>
+          <!-- Uploader's Name -->
+          <div class="form-group">
+            <label>Policy Upload by (Your name):</label>
+            <select id="uploader" onchange="toggleOtherUploader()">
+              <option value=""></option>
+              <option value="Assistant 1">Assistant 1</option>
+              <option value="Assistant 2">Assistant 2</option>
+              <option value="Assistant 3">Assistant 3</option>
+              <option value="Assistant 4">Assistant 4</option>
+              <option value="Assistant 5">Assistant 5</option>
+              <option value="other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="other-uploader"
+              style="display: none"
+              placeholder="Enter your name"
+            />
+          </div>
+          <!-- Broker's Name -->
+          <div class="form-group">
+            <label>Producer:</label>
+            <select id="producer" onchange="toggleOtherProducer()">
+              <option value=""></option>
+              <option value="Broker 1">Broker 1</option>
+              <option value="Broker 2">Broker 2</option>
+              <option value="Broker 3">Broker 3</option>
+              <option value="Broker 4">Broker 4</option>
+              <option value="Broker 5">Broker 5</option>
+              <option value="other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="other-producer"
+              style="display: none"
+              placeholder="Enter producer name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Insurance Experience:</label>
+            <label
+              ><input
+                type="radio"
+                name="prev-ins"
+                value="yes"
+                onclick="togglePrevIns()"
+              />
+              YES</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="prev-ins"
+                value="no"
+                onclick="togglePrevIns()"
+              />
+              NO</label
+            >
+            <input
+              type="text"
+              id="prev-ins-name"
+              style="display: none"
+              placeholder="Previous insurance name"
+            />
+          </div>
+          <!-- No. of Drivers and Vehicles -->
+          <div class="form-group">
+            <div class="count-selectors">
+              <div>
+                <label>No. of Drivers:</label>
+                <select
+                  id="driver-count"
+                  onchange="generateDriverFields()"
+                ></select>
+              </div>
+              <div>
+                <label>No. of Vehicles:</label>
+                <select
+                  id="vehicle-count"
+                  onchange="generateVehicleFields()"
+                ></select>
+              </div>
+            </div>
+          </div>
+
+          <div id="driver-fields"></div>
+        </section>
+
+        <!-- Coverage Section -->
+        <section id="coverage">
+          <h2>2. Coverage</h2>
+          <div id="vehicle-fields"></div>
+        </section>
+
+        <!-- Document Section -->
+        <section id="in-file">
+          <h2>3. In File</h2>
+          <div class="checkbox-grid" id="in-file-checkboxes"></div>
+        </section>
+
+        <!-- Additional Information Section -->
+        <section id="note">
+          <h2>4. Note</h2>
+          <div class="note-checkboxes" id="note-checkboxes"></div>
+        </section>
+
+        <div class="action-buttons">
+          <button type="button" onclick="generateNote()">Generate</button>
+          <button type="reset" onclick="resetForm()">Reset</button>
+        </div>
+      </form>
+
+      <!-- Generated Note Area -->
+      <section id="generated-note">
+        <h2>5. Generated Note</h2>
+        <textarea
+          id="final-note"
+          placeholder="Generated note will appear here..."
+        ></textarea>
+      </section>
+    </div>
+
+    <script src="scriptauto.js"></script>
+  </body>
+</html>
