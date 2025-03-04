@@ -176,14 +176,10 @@ function generateVehicleFields() {
             " DED"
           )}
           ${createCoverageCheckbox("collision", "COLLISION $", true, " DED")}  
-          ${createCoverageCheckbox("20", "#20 $", true, "")}
-          ${createCoverageCheckbox("27", "#27 $", true, "")}
-          ${createCoverageCheckbox("accident-waiver", "#39", false, "")}
-          ${createCoverageCheckbox("mcp", "MCP", false, "")}
-          ${createCoverageCheckbox("43", "#43", false, "")}
-          ${createCoverageCheckbox("43a", "#43A", false, "")}
-          ${createCoverageCheckbox("5", "#5", false, "")}
-          ${createCoverageCheckbox("23a", "#23A", false, "")}
+          ${createCoverageCheckbox("cov1", "COV1 $", true, "")}
+          ${createCoverageCheckbox("cov2", "COV2 $", true, "")}
+          ${createCoverageCheckbox("cov3", "COV2 3", false, "")}
+          ${createCoverageCheckbox("cov4", "COV2 4", false, "")}
         </div>
       </div>`
     container.insertAdjacentHTML("beforeend", vehicleHTML)
@@ -239,19 +235,12 @@ function populateInFileCheckboxes() {
     { name: "SIGNED AUTO APP FORM", checked: true },
     { name: "A+/DASH", checked: true },
     { name: "MVR", checked: true },
-    { name: "OS", checked: true },
-    { name: "BOS", checked: false },
-    { name: "DLH", checked: false },
-    { name: "DL", checked: false },
-    { name: "LOE", checked: false },
-    { name: "ABSTRACT", checked: false },
-    { name: "VEH PHOTOS", checked: false },
-    { name: "WINTER TIRE PHOTO", checked: false },
-    { name: "WINTER INVOICE/RECEIPT", checked: false },
-    { name: "SIGNED DECLAIM FORM", checked: false },
-    { name: "SAFETY STANDARDS CERTIFICATE", checked: false },
+    { name: "OWNERSHIP", checked: true },
+    { name: "PHOTOS 1", checked: false },
+    { name: "PHOTOS 2", checked: false },
+    { name: "SUPPORTING DOC 1", checked: false },
+    { name: "SUPPORTING DOC 2", checked: false },
     { name: "PAC FORM", checked: false },
-    { name: "VOID CHQ", checked: false },
     { name: "MONTHLY PP", checked: false },
     { name: "ANNUALLY PP", checked: false },
   ]
@@ -269,21 +258,12 @@ function populateInFileCheckboxes() {
 // Note Checkboxes
 function populateNoteCheckboxes() {
   const notes = [
-    { id: "combine", label: "COMBINE WITH PROPERTY POLICY" },
-    { id: "enroll", label: "ENROLL", hasInput: true },
-    { id: "spouse", label: "SPOUSE UNLICENSED" },
+    { id: "uw1", label: "UNDERWRITING RULE 1" },
+    { id: "uw2", label: "UNDERWRITING RULE 2 + DESCRIPTION", hasInput: true },
+    { id: "uw3", label: "UNDERWRITING RULE 3" },
     {
-      id: "midterm",
-      label: "MIDTERM CANCELLED PREVIOUS INSURANCE DUE TO BETTER PRICE",
-    },
-    { id: "direct-g", label: "DIRECT G FROM ", hasInput: true },
-    {
-      id: "winter-tires",
-      label: "CLT HAS FOUR WINTER TIRES AND WILL KEEP THEM ON FROM NOV-APR",
-    },
-    {
-      id: "same-day",
-      label: "THE APPLICATION WAS SIGNED AND BOUND ON ",
+      id: "uw4",
+      label: "UNDERWRITING RULE 4 + ADDITIONAL INFO",
       hasInput: true,
     },
   ]
